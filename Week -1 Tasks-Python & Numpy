@@ -1,0 +1,98 @@
+Q1:-Write a program that takes a user's name and age as input and prints a Hello World! message that includes their name and age.
+Ans:->
+a=input("Enter your name : ")
+b=input("Enter your age : ")
+print("Hello ",a," your age is ",b)
+
+Q2:- Create a program that swaps the values of two variables without using a third variable.
+Ans:->
+
+a=input("Enter value1 : ")
+b=input("Enter value2 : ")
+print(a,b)
+temp=a;
+a=b;
+y=temp;
+print(a,b)
+
+Q3:- Create a program that prints the first 10 numbers of the Fibonacci sequence.
+Ans:->
+
+def printfib(n):
+	f1, f2 = 0, 1
+
+	if n < 1:
+	  	return
+	
+	print(f1, end=" ") 
+
+	for i in range(1, n):
+		print(f2, end=" ")
+		next_fibonacci = f1 + f2
+		f1, f2 = f2, next_fibonacci
+
+printfib(10)
+
+Q4:-Create a function that checks if a given string is a palindrome.
+Ans:->
+
+def isPalindrome(s):
+	return s == s[::-1]
+
+s = input("Enter required string: ")
+
+if isPalindrome(s):
+ 	print("Yes")
+else:
+	print("No")
+
+
+Q5:-Create a program that removes duplicate elements from a list.
+Ans:->
+
+def Remove(duplicate):
+	final_list = []
+	for num in duplicate:
+		if num not in final_list:
+			final_list.append(num)
+	return final_list
+duplicate = [1, 2, 3, 2, 5, 5, 5, 6]
+print(Remove(duplicate))
+
+Q6:- Write a class representing a simple bank account with methods to deposit, withdraw, and check balance.
+Ans:->
+
+class Bank_Account:
+	def __init__(self):
+		self.balance=0
+		print("Hello!!! Welcome to the Deposit & Withdrawal Machine")
+
+	def deposit(self):
+		amount=float(input("Enter amount to be Deposited: "))
+		self.balance += amount
+		print("\n Amount Deposited:",amount)
+
+	def withdraw(self):
+		amount = float(input("Enter amount to be Withdrawn: "))
+		if self.balance>=amount:
+			self.balance-=amount
+			print("\n You Withdrew:", amount)
+		else:
+			print("\n Insufficient balance ")
+
+	def display(self):
+		print("\n Net Available Balance=",self.balance)
+
+s = Bank_Account()
+
+s.deposit()
+s.withdraw()
+s.display()
+
+Q7:- Write a program that creates a 3x3 matrix with values ranging from 1 to 9. Then, modify the matrix by doubling the values of the second row.
+Ans:->
+
+import numpy as np
+
+a = np.arange(1, 10).reshape(3, 3)
+print(a)
